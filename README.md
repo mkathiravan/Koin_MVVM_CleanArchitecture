@@ -98,3 +98,5 @@ The below snippet of koin module
 
       single { provideUserRepository(get(), get()) }
     }
+    
+ ![image](https://user-images.githubusercontent.com/39657409/79638804-14656e00-81a5-11ea-9a15-2183c621b60c.png)   
