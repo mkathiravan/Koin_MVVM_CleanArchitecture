@@ -99,4 +99,23 @@ The below snippet of koin module
       single { provideUserRepository(get(), get()) }
     }
     
+    
+  When you are start the koin you need to mention in the application class. The following snippet for the reference of application class
+  
+        class App : Application() {
+        override fun onCreate() {
+        super.onCreate()
+        startKoin {
+            androidContext(this@App)
+            androidLogger(Level.DEBUG)
+            modules(listOf(viewModelModule, repositoryModule, netModule, apiModule, databaseModule))
+            }
+    }
+
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        MultiDex.install(this)
+    }
+    }
+    
  ![image](https://user-images.githubusercontent.com/39657409/79638804-14656e00-81a5-11ea-9a15-2183c621b60c.png)   
